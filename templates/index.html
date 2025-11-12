@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banknote Authentication System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>💰 Banknote Authentication</h1>
+            <p class="subtitle">AI-Powered Banknote Genuineness Detection</p>
+            
+            <form id="predictionForm">
+                <div class="form-group">
+                    <label for="variance">Variance of Wavelet Transformed Image:</label>
+                    <input 
+                        type="number" 
+                        id="variance" 
+                        name="variance" 
+                        step="0.001" 
+                        placeholder="e.g., 1.5"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="skewness">Skewness of Wavelet Transformed Image:</label>
+                    <input 
+                        type="number" 
+                        id="skewness" 
+                        name="skewness" 
+                        step="0.001" 
+                        placeholder="e.g., 2.1"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="curtosis">Curtosis of Wavelet Transformed Image:</label>
+                    <input 
+                        type="number" 
+                        id="curtosis" 
+                        name="curtosis" 
+                        step="0.001" 
+                        placeholder="e.g., -0.5"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="entropy">Entropy of Image:</label>
+                    <input 
+                        type="number" 
+                        id="entropy" 
+                        name="entropy" 
+                        step="0.001" 
+                        placeholder="e.g., -1.2"
+                        required
+                    >
+                </div>
+                
+                <button type="submit" class="btn-predict">Analyze Banknote</button>
+            </form>
+            
+            <div id="result" class="result hidden">
+                <div id="resultContent"></div>
+                <button type="button" class="btn-reset" onclick="resetForm()">Try Another</button>
+            </div>
+            
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Analyzing...</p>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h3>📊 How It Works</h3>
+            <p>This system uses an Artificial Neural Network (ANN) trained on the UCI Banknote Authentication Dataset to classify banknotes as genuine or forged based on wavelet-transformed image features.</p>
+            <ul>
+                <li><strong>Variance:</strong> Variance of the wavelet-transformed image</li>
+                <li><strong>Skewness:</strong> Skewness of the wavelet-transformed image</li>
+                <li><strong>Curtosis:</strong> Curtosis of the wavelet-transformed image</li>
+                <li><strong>Entropy:</strong> Entropy of the image</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

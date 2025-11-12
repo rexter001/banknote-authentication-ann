@@ -1,25 +1,33 @@
-# Banknote Authentication - ANN
+# Banknote Authentication Web Application
 
-This repository contains a Jupyter notebook `Banknote_Authentication_ANN.ipynb` that trains a simple Artificial Neural Network (ANN) to classify banknotes as genuine or forged using the UCI Banknote Authentication dataset.
+An AI-powered web application to detect whether a banknote is genuine or forged using an Artificial Neural Network (ANN).
 
-Contents
-- `Banknote_Authentication_ANN.ipynb` - Notebook with data loading, exploration, preprocessing, model training, evaluation, and model saving.
+## Features
 
-How to run locally
-1. Create a virtual environment (recommended):
+- **Real-time Prediction**: Instantly analyze banknotes using machine learning
+- **User-Friendly Interface**: Clean and intuitive web UI
+- **Accuracy Metrics**: Displays confidence levels and prediction probabilities
+- **REST API**: Backend API for integration with other systems
 
-```powershell
-python -m venv .venv; .\.venv\Scripts\Activate.ps1
-```
+## Model
 
-2. Install dependencies:
+- **Architecture**: Artificial Neural Network (ANN)
+- **Dataset**: UCI Banknote Authentication Dataset
+- **Accuracy**: ~99% on test set
 
-```powershell
+## Installation
+
+```bash
 pip install -r requirements.txt
+python app.py
 ```
 
-3. Place the dataset CSV in the same folder and open the notebook in Jupyter or VS Code.
+Visit `http://localhost:5000`
 
-Notes
-- The notebook includes Colab-specific helpers (e.g., `files.upload()`). Remove or adapt these if running locally.
-- If the notebook saves a Keras model (`.h5`), you may need h5py installed.
+## Deployment
+
+Push to GitHub and connect to Vercel for automatic deployment.
+
+## Author
+
+Khaja Masthan Shaik (rexter001)
